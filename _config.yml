@@ -1,0 +1,18 @@
+title: "Shin-Hanga Notes"
+url: "https://shinhanganotes.com"
+baseurl: ""
+
+collections:
+  artists:
+    output: true
+    permalink: /artists/:name/
+  prints:
+    output: true
+    permalink: /prints/:name/
+  guides:
+    output: true
+    permalink: /guides/:name/
+
+plugins:
+  - jekyll-sitemap
+
