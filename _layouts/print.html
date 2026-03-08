@@ -14,6 +14,7 @@ layout: default
     {% if page.japanese_title %}<span lang="ja">{{ page.japanese_title }}</span>{% endif %}
   </h1>
 
+  {% if page.artist or page.year or page.publisher or page.series or page.technique or page.size_cm or page.edition_notes %}
   <dl class="print-meta">
     {% if page.artist %}
     <dt>Artist</dt>
@@ -26,6 +27,7 @@ layout: default
     {% if page.size_cm %}<dt>Size</dt><dd>{{ page.size_cm }} cm</dd>{% endif %}
     {% if page.edition_notes %}<dt>Edition</dt><dd>{{ page.edition_notes }}</dd>{% endif %}
   </dl>
+  {% endif %}
 
   {{ content }}
 

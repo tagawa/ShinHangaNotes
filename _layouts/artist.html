@@ -14,11 +14,13 @@ layout: default
     {% if page.japanese_name %}<span lang="ja">{{ page.japanese_name }}</span>{% endif %}
   </h1>
 
+  {% if page.active_period or page.region or page.specialty %}
   <p class="artist-meta">
     {% if page.active_period %}{{ page.active_period }}{% endif %}
     {% if page.region %}&nbsp;&middot;&nbsp;{{ page.region }}{% endif %}
     {% if page.specialty %}&nbsp;&middot;&nbsp;{{ page.specialty }}{% endif %}
   </p>
+  {% endif %}
 
   {{ content }}
 
