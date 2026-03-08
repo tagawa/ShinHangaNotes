@@ -1,0 +1,11 @@
+<article class="artist-card">
+  {% if include.artist.featured_image and include.artist.featured_image != "" %}
+  <a href="{{ include.artist.url | relative_url }}" tabindex="-1" aria-hidden="true">
+    <img src="{{ include.artist.featured_image | relative_url }}" alt="{{ include.artist.image_alt }}">
+  </a>
+  {% endif %}
+  <div class="card-body">
+    <h2><a href="{{ include.artist.url | relative_url }}">{{ include.artist.title }}</a></h2>
+    {% if include.artist.excerpt %}<p>{{ include.artist.excerpt }}</p>{% endif %}
+  </div>
+</article>

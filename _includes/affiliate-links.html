@@ -1,0 +1,12 @@
+{% if page.affiliate_links %}
+<section class="affiliate-links" aria-label="Where to find this">
+  <h2>Find This</h2>
+  <ul>
+    {% for link in page.affiliate_links %}
+    <li>
+      <a href="{{ link.url }}" target="_blank" rel="noopener nofollow sponsored">{{ link.label }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

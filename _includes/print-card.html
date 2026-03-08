@@ -1,0 +1,11 @@
+<article class="print-card">
+  {% if include.print.featured_image and include.print.featured_image != "" %}
+  <a href="{{ include.print.url | relative_url }}" tabindex="-1" aria-hidden="true">
+    <img src="{{ include.print.featured_image | relative_url }}" alt="{{ include.print.image_alt }}">
+  </a>
+  {% endif %}
+  <div class="card-body">
+    <h2><a href="{{ include.print.url | relative_url }}">{{ include.print.title }}</a></h2>
+    {% if include.print.excerpt %}<p>{{ include.print.excerpt }}</p>{% endif %}
+  </div>
+</article>

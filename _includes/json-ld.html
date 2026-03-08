@@ -1,0 +1,40 @@
+{% if page.schema_type == "VisualArtwork" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VisualArtwork",
+  "name": "{{ page.title | escape }}",
+  "url": "{{ page.url | absolute_url }}"{% if page.year %},
+  "dateCreated": "{{ page.year }}"{% endif %}{% if page.technique %},
+  "artMedium": "{{ page.technique | escape }}"{% endif %}{% if page.featured_image and page.featured_image != "" %},
+  "image": "{{ page.featured_image | absolute_url }}"{% endif %}{% if page.artist %},
+  "artist": {
+    "@type": "Person",
+    "name": "{{ page.artist | escape }}"
+  }{% endif %}
+}
+</script>
+{% elsif page.schema_type == "Person" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ page.title | escape }}",
+  "url": "{{ page.url | absolute_url }}"{% if page.featured_image and page.featured_image != "" %},
+  "image": "{{ page.featured_image | absolute_url }}"{% endif %}{% if page.birth_year %},
+  "birthDate": "{{ page.birth_year }}"{% endif %}{% if page.death_year %},
+  "deathDate": "{{ page.death_year }}"{% endif %}
+}
+</script>
+{% elsif page.schema_type == "Article" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ page.title | escape }}",
+  "url": "{{ page.url | absolute_url }}"{% if page.featured_image and page.featured_image != "" %},
+  "image": "{{ page.featured_image | absolute_url }}"{% endif %}{% if page.excerpt %},
+  "description": "{{ page.excerpt | escape }}"{% endif %}
+}
+</script>
+{% endif %}

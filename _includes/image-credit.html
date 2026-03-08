@@ -1,0 +1,10 @@
+{% if page.image_credit %}
+<figcaption class="image-credit">
+  Image:
+  {% if page.image_source_url %}
+    <a href="{{ page.image_source_url }}" target="_blank" rel="noopener">{{ page.image_credit }}</a>
+  {% else %}
+    {{ page.image_credit }}
+  {% endif %}
+</figcaption>
+{% endif %}
