@@ -257,6 +257,14 @@ footer a:hover { color: var(--accent); }
   color: var(--muted);
 }
 
+/* Compact metadata line on artist pages */
+.artist-meta {
+  font-family: system-ui, sans-serif;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: var(--space-lg);
+}
+
 /* === Image Credit === */
 .image-credit {
   font-family: system-ui, sans-serif;

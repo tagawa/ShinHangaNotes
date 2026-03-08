@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<article class="artist-profile">
+  {% if page.featured_image and page.featured_image != "" %}
+  <figure>
+    <img src="{{ page.featured_image | relative_url }}" alt="{{ page.image_alt }}">
+    {% include image-credit.html %}
+  </figure>
+  {% endif %}
+
+  <h1>
+    {{ page.title }}
+    {% if page.japanese_name %}<span lang="ja">{{ page.japanese_name }}</span>{% endif %}
+  </h1>
+
+  <p class="artist-meta">
+    {% if page.active_period %}{{ page.active_period }}{% endif %}
+    {% if page.region %}&nbsp;&middot;&nbsp;{{ page.region }}{% endif %}
+    {% if page.specialty %}&nbsp;&middot;&nbsp;{{ page.specialty }}{% endif %}
+  </p>
+
+  {{ content }}
+
+  {% include faq-schema.html %}
+  {% include affiliate-links.html %}
+  {% include json-ld.html %}
+</article>
