@@ -10,7 +10,8 @@
   "image": "{{ page.featured_image | absolute_url }}"{% endif %}{% if page.artist %},
   "artist": {
     "@type": "Person",
-    "name": "{{ page.artist | escape }}"
+    {% assign _artist_page = site.artists | where_exp: "a", "a.url contains page.artist" | first %}
+    "name": "{{ _artist_page.title | default: page.artist | escape }}"
   }{% endif %}
 }
 </script>
