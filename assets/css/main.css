@@ -171,6 +171,10 @@ footer nav {
   gap: var(--space-md);
 }
 
+footer p {
+  margin: 0; /* override base p margin-bottom */
+}
+
 footer a {
   color: var(--muted);
   text-decoration: underline;
