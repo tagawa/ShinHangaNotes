@@ -148,12 +148,14 @@ header nav .site-title {
 header nav a:hover { color: var(--accent); }
 
 /* === Footer === */
-/* border-top on the element itself so it spans full viewport width */
+/* border-top on footer so it spans full viewport width */
 footer {
   border-top: 1px solid var(--border);
+}
+
+.footer-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  width: 100%;
   padding: var(--space-lg) var(--space-md);
   font-family: system-ui, sans-serif;
   font-size: 0.9rem;
