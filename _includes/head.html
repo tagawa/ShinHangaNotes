@@ -1,7 +1,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% if page.title and page.title != site.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-{% if page.excerpt %}<meta name="description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}">{% endif %}
+{% comment %}
+  Meta description: static pages use `description` frontmatter; collection pages (prints, artists,
+  guides) use `excerpt`, which also drives card previews on index pages. Fall back to excerpt if
+  no description is set, so collection pages work without a separate description field.
+{% endcomment %}
+{% if page.description %}<meta name="description" content="{{ page.description | strip_html | strip_newlines | truncate: 160 }}">{% elsif page.excerpt %}<meta name="description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}">{% endif %}
 <link rel="canonical" href="{{ page.url | absolute_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 <script src="https://cdn.usefathom.com/script.js" data-site="DJTIGXEH" defer></script>
